@@ -34,7 +34,7 @@ function Nav() {
         <Burger
           opened={burgerOpen}
           onClick={() => setBurgerOpen(!burgerOpen)}
-          size="md"
+          size="sm"
           title={burgerOpen ? "Close Navigation" : "Open Navigation"}
         />
         <Drawer
