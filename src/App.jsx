@@ -1,6 +1,13 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/home";
+
 function App() {
-  return ( 
-    <h1>MJP SYstems</h1>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
