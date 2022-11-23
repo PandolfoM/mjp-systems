@@ -1,8 +1,7 @@
-import { AppShell } from "@mantine/core";
-import Nav from "../components/Nav";
+import Hero from "../components/Hero";
 
 function Home() {
-  return <Nav />;
+  return <Hero />;
 }
 
 export default Home;

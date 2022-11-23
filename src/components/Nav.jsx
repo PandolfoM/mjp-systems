@@ -3,20 +3,18 @@ import {
   Drawer,
   Header,
   Image,
-  MediaQuery,
   useMantineTheme,
 } from "@mantine/core";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logobig.svg";
-import "./style.sass";
 
 function Nav() {
   const theme = useMantineTheme();
   const [burgerOpen, setBurgerOpen] = useState(false);
 
   return (
-    <Header height={70} p="xs">
+    <Header height={70} p="xs" pos={'fixed'}>
       <div className="nav-desktop">
         <Image width={180} src={logo} alt="MJP Systems"></Image>
         <ul className="nav-desktop-links">
