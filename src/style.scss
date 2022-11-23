@@ -88,8 +88,7 @@ body {
     height: fit-content;
     border-radius: $radius;
     padding: 1rem;
-    // background-color: #a5114b60;
-    // border: 1px solid #e8c2d07e;
+    outline: 1px solid #d6d6d6c2;
     background: rgb(165, 17, 75);
     background: linear-gradient(
       280deg,
@@ -117,4 +116,29 @@ body {
       font-size: 14px;
     }
   }
+}
+
+// Our Services
+.service-container {
+  margin: 5rem 1.5rem;
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .service-grid {
+    div {
+      padding: 1rem;
+      border-radius: $radius;
+      background-color: #d6d6d65d;
+      box-shadow: 8px 8px 1px 0px #c05880;
+      cursor: default;
+
+      h3 {
+        margin-top: 0;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
 }

@@ -14,7 +14,7 @@ function Nav() {
   const [burgerOpen, setBurgerOpen] = useState(false);
 
   return (
-    <Header height={70} p="xs" pos={'fixed'}>
+    <Header height={70} p="xs">
       <div className="nav-desktop">
         <Image width={180} src={logo} alt="MJP Systems"></Image>
         <ul className="nav-desktop-links">
