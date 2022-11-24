@@ -12,7 +12,7 @@ export default function Contact() {
   });
 
   return (
-    <div className="contact-container">
+    <div id="contact" className="contact-container">
       <h2>Contact Us</h2>
       <div className="contact-form-container">
         <form className="contact-form">
@@ -41,7 +41,17 @@ export default function Contact() {
           <UnstyledButton className="contact-send">Send</UnstyledButton>
         </form>
       </div>
-      
+      <footer className="footer-container">
+      <div className="footer-content">
+        <div>
+          <p>&copy; 2022 MJP Systems</p>
+        </div>
+        <div className="footer-contact">
+          <p>Cell: 860-944-9761</p>
+          <p>Email: markp@mjpsystems.com</p>
+        </div>
+      </div>
+    </footer>
     </div>
   );
 }

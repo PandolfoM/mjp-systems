@@ -1,12 +1,6 @@
-import {
-  Burger,
-  Drawer,
-  Header,
-  Image,
-  useMantineTheme,
-} from "@mantine/core";
+import { Burger, Drawer, Header, Image, useMantineTheme } from "@mantine/core";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import logo from "../assets/logobig.svg";
 
 function Nav() {
@@ -14,16 +8,22 @@ function Nav() {
   const [burgerOpen, setBurgerOpen] = useState(false);
 
   return (
-    <Header height={70} p="xs" pos={'fixed'}>
+    <Header height={70} p="xs" pos={"fixed"}>
       <div className="nav-desktop">
         <Image width={180} src={logo} alt="MJP Systems"></Image>
         <ul className="nav-desktop-links">
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/#"}>Home</Link>
           </li>
-          <li>Our Services</li>
-          <li>Client Access</li>
-          <li>Contact Us</li>
+          <li>
+            <Link to={"/#services"}>Our Services</Link>
+          </li>
+          <li>
+            <Link>Client Access</Link>
+          </li>
+          <li>
+            <Link to={"/#contact"}>Contact Us</Link>
+          </li>
         </ul>
       </div>
 

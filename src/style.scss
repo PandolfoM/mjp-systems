@@ -2,6 +2,7 @@
 $font-stack: Poppins, sans-serif;
 $breakpoint-small: 668px;
 $radius: 5px;
+$footer-height: 33rem;
 
 * {
   font-family: $font-stack;
@@ -13,6 +14,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: white;
 }
 
 // Navigation
@@ -70,8 +72,8 @@ body {
   height: 100vh;
 
   .hero-img {
-    background-image: url("./assets/hero.jpg");
     min-height: 300px;
+    background-image: url("./assets/hero.jpg");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -116,8 +118,8 @@ body {
 
 // Our Services
 .service-container {
-  margin: 5rem 1.5rem;
-
+  margin: 5rem 1.5rem $footer-height 1.5rem;
+  height: 50rem;
   h2 {
     font-size: 3rem;
   }
@@ -127,7 +129,7 @@ body {
       padding: 1rem;
       border-radius: $radius;
       background-color: #d6d6d65d;
-      box-shadow: 8px 8px 1px 0px #c05880;
+      box-shadow: 8px 8px 1px 0px rgb(26, 43, 109);
       cursor: default;
 
       h3 {
@@ -140,12 +142,16 @@ body {
 
 // Contact Us
 .contact-container {
-  padding-bottom: 1rem;
   margin: 5rem 0rem 0 0;
   padding-top: 3rem;
   background-color: rgb(26, 43, 109);
   color: white;
   overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  height: $footer-height;
+  width: 100%;
+  z-index: -10;
 
   h2 {
     text-align: center;
@@ -206,8 +212,7 @@ body {
 
 // Footer
 .footer-container {
-  height: 5rem;
-  background-color: rgb(26, 43, 109);
+  margin-top: 3rem;
   overflow: hidden;
   color: white;
   display: flex;

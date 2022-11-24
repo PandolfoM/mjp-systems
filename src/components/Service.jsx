@@ -4,7 +4,7 @@ import React from "react";
 function Service() {
   return (
     <>
-      <div className="service-container">
+      <div id="services" className="service-container">
         <h2>Our Services</h2>
         <SimpleGrid
           className="service-grid"
