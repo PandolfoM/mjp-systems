@@ -19,6 +19,23 @@ body {
 }
 
 // Navigation
+.nav-container-scrolled {
+  position: fixed;
+  height: 30px;
+  background-color: white;
+  border-bottom: 1px solid #d6d6d6;
+  width: 100%;
+  transition: all 500ms ease;
+}
+
+.nav-container {
+  background-color: transparent;
+  position: fixed;
+  height: 70px;
+  width: 100%;
+  transition: all 500ms ease;
+}
+
 .nav-desktop {
   display: flex;
   align-items: center;
@@ -26,6 +43,11 @@ body {
   justify-content: space-between;
   @media screen and (max-width: $breakpoint-small) {
     display: none;
+  }
+
+  img {
+    width: fit-content;
+    height: 100%;
   }
 
   &-links {
@@ -52,9 +74,13 @@ body {
   align-items: center;
   height: 100%;
   justify-content: space-between;
-  font-weight: 500;
   @media (min-width: $breakpoint-small) {
     display: none;
+  }
+
+  img {
+    width: fit-content;
+    height: 100%;
   }
 
   &-links {
@@ -64,11 +90,11 @@ body {
     gap: 0.5rem;
     padding: 0;
     color: $primary-color;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
   }
 }
 

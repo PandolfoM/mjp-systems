@@ -1,4 +1,5 @@
 import { Burger, Drawer, Header, Image, useMantineTheme } from "@mantine/core";
+import { useWindowScroll } from "@mantine/hooks";
 import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import logo from "../assets/logobig.svg";
@@ -6,11 +7,13 @@ import logo from "../assets/logobig.svg";
 function Nav() {
   const theme = useMantineTheme();
   const [burgerOpen, setBurgerOpen] = useState(false);
+  const [scroll, scrollTo] = useWindowScroll();
 
   return (
-    <Header height={70} p="xs" pos={"fixed"}>
+    <header
+      className={scroll.y >= 100 ? "nav-container-scrolled" : "nav-container"}>
       <div className="nav-desktop">
-        <Image width={180} src={logo} alt="MJP Systems"></Image>
+        <img src={logo} alt="MJP Systems"></img>
         <ul className="nav-desktop-links">
           <li>
             <Link to={"/#"}>Home</Link>
@@ -28,11 +31,11 @@ function Nav() {
       </div>
 
       <div className="nav-mobile">
-        <Image width={120} src={logo} alt="MJP Systems"></Image>
+        <img src={logo} alt="MJP Systems"></img>
         <Burger
           opened={burgerOpen}
           onClick={() => setBurgerOpen(!burgerOpen)}
-          size="sm"
+          size="md"
           title={burgerOpen ? "Close Navigation" : "Open Navigation"}
         />
         <Drawer
@@ -51,15 +54,21 @@ function Nav() {
           overlayBlur={2}>
           <ul className="nav-mobile-links">
             <li>
-              <Link to={"/"}>Home</Link>
+              <Link to={"/#"}>Home</Link>
             </li>
-            <li>Our Services</li>
-            <li>Client Access</li>
-            <li>Contact Us</li>
+            <li>
+              <Link to={"/#services"}>Our Services</Link>
+            </li>
+            <li>
+              <Link>Client Access</Link>
+            </li>
+            <li>
+              <Link to={"/#contact"}>Contact Us</Link>
+            </li>
           </ul>
         </Drawer>
       </div>
-    </Header>
+    </header>
   );
 }
 
