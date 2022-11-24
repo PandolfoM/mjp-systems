@@ -2,7 +2,8 @@
 $font-stack: Poppins, sans-serif;
 $breakpoint-small: 668px;
 $radius: 5px;
-$footer-height: 33rem;
+$footer-height: 35rem;
+$primary-color: rgb(26, 43, 109);
 
 * {
   font-family: $font-stack;
@@ -32,6 +33,8 @@ body {
     flex-direction: row;
     list-style: none;
     gap: 1rem;
+    color: $primary-color;
+    font-weight: 500;
 
     li {
       cursor: pointer;
@@ -49,6 +52,7 @@ body {
   align-items: center;
   height: 100%;
   justify-content: space-between;
+  font-weight: 500;
   @media (min-width: $breakpoint-small) {
     display: none;
   }
@@ -59,6 +63,7 @@ body {
     list-style: none;
     gap: 0.5rem;
     padding: 0;
+    color: $primary-color;
   }
 
   a {
@@ -97,13 +102,14 @@ body {
 
     h1 {
       margin: 0;
+      color: $primary-color;
     }
 
     hr {
       width: 20%;
       margin-left: 0;
       border: none;
-      background: black;
+      background: $primary-color;
       height: 2px;
       margin-bottom: 2rem;
     }
@@ -119,9 +125,12 @@ body {
 // Our Services
 .service-container {
   margin: 5rem 1.5rem $footer-height 1.5rem;
-  height: 50rem;
+  padding-bottom: 5rem;
+  height: fit-content;
+  background-color: white;
   h2 {
     font-size: 3rem;
+    color: $primary-color;
   }
 
   .service-grid {
@@ -129,10 +138,11 @@ body {
       padding: 1rem;
       border-radius: $radius;
       background-color: #d6d6d65d;
-      box-shadow: 8px 8px 1px 0px rgb(26, 43, 109);
+      box-shadow: 8px 8px 1px 0px $primary-color;
       cursor: default;
 
       h3 {
+        color: $primary-color;
         margin-top: 0;
         font-size: 1.4rem;
       }
@@ -144,7 +154,7 @@ body {
 .contact-container {
   margin: 5rem 0rem 0 0;
   padding-top: 3rem;
-  background-color: rgb(26, 43, 109);
+  background-color: $primary-color;
   color: white;
   overflow: hidden;
   position: fixed;
@@ -212,21 +222,31 @@ body {
 
 // Footer
 .footer-container {
-  margin-top: 3rem;
+  padding-top: 3rem;
+  font-size: 0.8rem;
   overflow: hidden;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-
+  height: 5rem;
+  @media (max-width: $breakpoint-small) {
+    font-size: 0.5rem;
+  }
   .footer-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     width: 85%;
     .footer-contact {
       display: flex;
-      gap: 2rem;
+      gap: 1rem;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
     }
   }
 }
