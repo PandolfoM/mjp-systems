@@ -90,11 +90,7 @@ body {
     padding: 1rem;
     outline: 1px solid #d6d6d6c2;
     background: rgb(165, 17, 75);
-    background: linear-gradient(
-      280deg,
-      #d6d6d6c3 0%,
-      #b4b4b460 100%
-    );
+    background: linear-gradient(280deg, #d6d6d6c3 0%, #b4b4b460 100%);
     margin-right: 5%;
 
     h1 {
@@ -140,5 +136,92 @@ body {
       }
     }
   }
+}
 
+// Contact Us
+.contact-container {
+  padding-bottom: 1rem;
+  margin: 5rem 0rem 0 0;
+  padding-top: 3rem;
+  background-color: rgb(26, 43, 109);
+  color: white;
+  overflow: hidden;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  input,
+  textarea {
+    border-bottom: 2px solid white;
+    color: white;
+    font: inherit;
+    &:focus {
+      border-bottom: 2px solid white;
+    }
+  }
+
+  .contact-form-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 85%;
+
+      .contact-div1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        .contact-name,
+        .contact-email {
+          width: 50%;
+        }
+      }
+
+      .contact-div2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        .contact-subject,
+        .contact-phone,
+        .contact-message {
+          width: 100%;
+        }
+      }
+    }
+
+    .contact-send {
+      color: white;
+    }
+  }
+}
+
+// Footer
+.footer-container {
+  height: 5rem;
+  background-color: rgb(26, 43, 109);
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    .footer-contact {
+      display: flex;
+      gap: 2rem;
+    }
+  }
 }
