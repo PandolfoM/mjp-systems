@@ -21,7 +21,7 @@ body {
 // Navigation
 .nav-container-scrolled {
   position: fixed;
-  height: 30px;
+  height: 50px;
   background-color: white;
   border-bottom: 1px solid #d6d6d6;
   width: 100%;
@@ -31,7 +31,7 @@ body {
 .nav-container {
   background-color: transparent;
   position: fixed;
-  height: 70px;
+  height: 100px;
   width: 100%;
   transition: all 500ms ease;
 }
@@ -40,14 +40,18 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
+  margin: 0 1rem;
   justify-content: space-between;
   @media screen and (max-width: $breakpoint-small) {
     display: none;
   }
 
-  img {
+  .img {
     width: fit-content;
     height: 100%;
+    img {
+      height: 100%;
+    }
   }
 
   &-links {

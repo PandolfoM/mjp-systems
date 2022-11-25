@@ -13,7 +13,9 @@ function Nav() {
     <header
       className={scroll.y >= 100 ? "nav-container-scrolled" : "nav-container"}>
       <div className="nav-desktop">
-        <img src={logo} alt="MJP Systems"></img>
+        <Link to={"/#"} className="img">
+          <img src={logo} alt="MJP Systems"></img>
+        </Link>
         <ul className="nav-desktop-links">
           <li>
             <Link to={"/#"}>Home</Link>
@@ -26,6 +28,9 @@ function Nav() {
           </li>
           <li>
             <Link to={"/#contact"}>Contact Us</Link>
+          </li>
+          <li>
+            <Link to={"/form"}>Form</Link>
           </li>
         </ul>
       </div>

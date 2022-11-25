@@ -108,7 +108,29 @@ $primary-color: rgb(26, 43, 109);
       border-radius: $radius;
 
       input {
+        padding: 15px;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
         width: 100%;
+        box-sizing: border-box;
+        color: #2c3e50;
+        font-size: 13px;
+        transition: all 0.25s ease;
+        &:hover {
+          border: $primary-color 1px solid;
+        }
+
+        &:focus-visible {
+          border: 1px solid $primary-color;
+          outline: none;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+        }
       }
 
       .trash-icon {
@@ -193,7 +215,29 @@ $primary-color: rgb(26, 43, 109);
     border-radius: $radius;
 
     input {
+      padding: 15px;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      border: 1px solid #ccc;
+      border-radius: 3px;
       width: 100%;
+      box-sizing: border-box;
+      color: #2c3e50;
+      font-size: 13px;
+      transition: all 0.25s ease;
+      &:hover {
+        border: $primary-color 1px solid;
+      }
+
+      &:focus-visible {
+        border: 1px solid $primary-color;
+        outline: none;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
     }
   }
 
@@ -231,42 +275,6 @@ $primary-color: rgb(26, 43, 109);
 
 .error {
   color: red;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="password"],
-input[type="email"] {
-  padding: 15px;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  width: 100%;
-  box-sizing: border-box;
-  color: #2c3e50;
-  font-size: 13px;
-  transition: all 0.25s ease;
-}
-
-input[type="text"]:hover,
-input[type="number"]:hover,
-input[type="password"]:hover,
-input[type="email"]:hover {
-  border: $primary-color 1px solid;
-}
-
-input[type="text"]:focus-visible,
-input[type="number"]:focus-visible,
-input[type="password"]:focus-visible,
-input[type="email"]:focus-visible {
-  border: 1px solid $primary-color;
-  outline: none;
-}
-
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
 }
 
 @keyframes wiggle {

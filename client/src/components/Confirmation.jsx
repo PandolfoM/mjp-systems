@@ -30,25 +30,30 @@ function Confirmation(props) {
     e.preventDefault();
     setStatus("Sending...");
 
-    let formType;
+    let details;
 
-    if (formData.type === "1") {
-      formType = "Change Password";
+    if (formData.allSites === "0") {
+      details = {
+        name: formData.name,
+        network: formData.network,
+        email: formData.email,
+        username: formData.username,
+        password: formData.password,
+        form: formData.type === "1" ? "Change Password" : "New Account",
+      };
     } else {
-      formType = "New Account";
+      details = {
+        name: formData.name,
+        network: formData.network,
+        email: formData.email,
+        username: formData.username,
+        password: formData.password,
+        form: formData.type === "1" ? "Change Password" : "New Account",
+        sites: formData.allSites === "1" ? "All Sites" : filtered.join(", "),
+      };
     }
 
-    let details = {
-      name: formData.name,
-      network: formData.network,
-      email: formData.email,
-      username: formData.username,
-      password: formData.password,
-      form: formType,
-      sites: formData.allSites === "1" ? "All Sites" : filtered.join(", "),
-    };
-
-    const response = await fetch("/contact", {
+    const response = await fetch("/resetform", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

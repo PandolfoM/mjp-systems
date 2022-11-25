@@ -6,9 +6,13 @@ function Ad() {
 
   useEffect(() => {
     return () => {
-      setTimeout(() => {
-        setOpened(true);
-      }, 1500);
+      let ranad = sessionStorage.getItem("ranad");
+      if (ranad == null) {
+        setTimeout(() => {
+          setOpened(true);
+        }, 1500);
+      }
+      sessionStorage.setItem("ranad", true);
     };
   }, []);
 
