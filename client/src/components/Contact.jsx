@@ -125,7 +125,7 @@ export default function Contact() {
         <footer className="footer-container">
           <div className="footer-content">
             <div>
-              <p>&copy; 2022 MJP Systems</p>
+              <p>&copy; {new Date().getFullYear()} MJP Systems</p>
             </div>
             <div className="footer-contact">
               <p>
