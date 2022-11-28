@@ -7,6 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/resetform": "http://localhost:5000",
+      "/contactform": "http://localhost:5000",
     },
   },
 })
