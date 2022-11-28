@@ -1,5 +1,11 @@
 import React from "react";
-import { ActionIcon, Affix, Button, Transition, UnstyledButton } from "@mantine/core";
+import {
+  ActionIcon,
+  Affix,
+  Button,
+  Transition,
+  UnstyledButton,
+} from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +18,8 @@ function ScrollTop() {
       <Transition transition={"slide-up"} mounted={scroll.y >= 100}>
         {(transitionStyles) => (
           <UnstyledButton
-          className="scroll-top-btn"
+            title="Scroll to top"
+            className="scroll-top-btn"
             variant="filled"
             radius={"xl"}
             size="xl"
