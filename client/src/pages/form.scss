@@ -6,24 +6,6 @@ $radius: 5px;
 $footer-height: 35rem;
 $primary-color: rgb(26, 43, 109);
 
-html {
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px #000000; 
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.4); 
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.8); 
-    border-radius: 10px;
-  }
-}
-
 .form-components-container {
   padding: 1rem;
   top: 50%;
