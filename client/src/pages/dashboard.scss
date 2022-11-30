@@ -1,0 +1,16 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap);
+$font-stack: Poppins, sans-serif;
+$breakpoint-small: 668px;
+$radius: 5px;
+$footer-height: 35rem;
+$primary-color: rgb(26, 43, 109);
+
+.dashboard-container {
+  padding-top: 8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .dashboard-content {
+    width: 85%;
+  }
+}

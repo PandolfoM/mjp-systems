@@ -96,6 +96,7 @@ body {
   display: flex;
   align-items: center;
   height: 100%;
+  margin: 0 1rem;
   justify-content: space-between;
   @media (min-width: $breakpoint-small) {
     display: none;
@@ -318,5 +319,43 @@ body {
     width: 2rem;
     height: 2rem;
     font-size: 1rem;
+  }
+}
+
+// Client Access Modal
+.client-access-modal {
+  text-align: center;
+
+  p {
+    margin-top: 0;
+  }
+
+  input {
+    border-bottom: 2px solid $primary-color;
+    color: $primary-color;
+    font: inherit;
+    &:focus {
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+
+  .mantine-InputWrapper-error {
+    text-align: left;
+    font-family: $font-stack;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .submit-button {
+    width: 100%;
+    height: 34px;
+    background-color: $primary-color;
+    text-align: center;
+    font: inherit;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: white;
+    border-radius: $radius;
+    margin-top: calc(10px / 2);
   }
 }

@@ -1,10 +1,14 @@
-import { Burger, Drawer, Header, Image, useMantineTheme } from "@mantine/core";
+import { Burger, Drawer, useMantineTheme } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import logo from "../assets/logobig.svg";
+import Auth from "../utils/Auth";
+import { useNavigate } from "react-router-dom";
 
-function Nav() {
+function Nav(props) {
+  const navigate = useNavigate();
+  const { setIsClientModalOpen } = props;
   const theme = useMantineTheme();
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [scroll, scrollTo] = useWindowScroll();
@@ -24,7 +28,14 @@ function Nav() {
             <Link to={"/#services"}>Our Services</Link>
           </li>
           <li>
-            <Link>Client Access</Link>
+            <a
+              onClick={() =>
+                Auth.loggedIn()
+                  ? navigate("/dashboard", { replace: true })
+                  : setIsClientModalOpen(true)
+              }>
+              Client Access
+            </a>
           </li>
           <li>
             <Link to={"/#contact"}>Contact Us</Link>
@@ -46,17 +57,10 @@ function Nav() {
         <Drawer
           opened={burgerOpen}
           onClose={() => setBurgerOpen(false)}
-          title="Navigation Drawer"
+          title="Navigation"
           position="right"
           size={"sm"}
-          padding="md"
-          overlayColor={
-            theme.colorScheme === "dark"
-              ? theme.colors.dark[9]
-              : theme.colors.gray[2]
-          }
-          overlayOpacity={0.55}
-          overlayBlur={2}>
+          padding="md">
           <ul className="nav-mobile-links">
             <li>
               <Link to={"/#"}>Home</Link>
@@ -65,7 +69,14 @@ function Nav() {
               <Link to={"/#services"}>Our Services</Link>
             </li>
             <li>
-              <Link>Client Access</Link>
+              <a
+                onClick={() =>
+                  Auth.loggedIn()
+                    ? navigate("/dashboard", { replace: true })
+                    : setIsClientModalOpen(true)
+                }>
+                Client Access
+              </a>
             </li>
             <li>
               <Link to={"/#contact"}>Contact Us</Link>

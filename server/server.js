@@ -17,4 +17,5 @@ app.use(cors());
 app.use(express.json());
 app.use("/", router);
 app.use(require("./routes/send.js"));
+app.use(require("./routes/validate.js"));
 app.listen(process.env.PORT || 5000, () => console.log("Server Running"));

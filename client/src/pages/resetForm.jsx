@@ -1,4 +1,3 @@
-import { Box, MediaQuery } from "@mantine/core";
 import React, { useState } from "react";
 import AccountType from "../components/AccountType";
 import Confirmation from "../components/Confirmation";
