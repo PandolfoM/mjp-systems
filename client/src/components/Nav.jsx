@@ -22,10 +22,24 @@ function Nav(props) {
         </Link>
         <ul className="nav-desktop-links">
           <li>
-            <Link to={"/#"}>Home</Link>
+            <Link smooth to={"/#"}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to={"/#services"}>Our Services</Link>
+            <Link smooth to={"/#services"}>
+              Our Services
+            </Link>
+          </li>
+          <li>
+            <Link smooth to={"/#contact"}>
+              Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link smooth to={"/form"}>
+              Form
+            </Link>
           </li>
           <li>
             <a
@@ -36,12 +50,6 @@ function Nav(props) {
               }>
               Client Access
             </a>
-          </li>
-          <li>
-            <Link to={"/#contact"}>Contact Us</Link>
-          </li>
-          <li>
-            <Link to={"/form"}>Form</Link>
           </li>
         </ul>
       </div>
@@ -63,10 +71,24 @@ function Nav(props) {
           padding="md">
           <ul className="nav-mobile-links">
             <li>
-              <Link to={"/#"}>Home</Link>
+              <Link smooth to={"/#"}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link to={"/#services"}>Our Services</Link>
+              <Link smooth to={"/#services"}>
+                Our Services
+              </Link>
+            </li>
+            <li>
+              <Link smooth to={"/#contact"}>
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link smooth to={"/form"}>
+                Form
+              </Link>
             </li>
             <li>
               <a
@@ -77,9 +99,6 @@ function Nav(props) {
                 }>
                 Client Access
               </a>
-            </li>
-            <li>
-              <Link to={"/#contact"}>Contact Us</Link>
             </li>
           </ul>
         </Drawer>
