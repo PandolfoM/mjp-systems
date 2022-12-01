@@ -1,30 +1,16 @@
+import React from "react";
 import { Modal } from "@mantine/core";
-import React, { useEffect, useState } from "react";
 
-function Ad() {
-  const [opened, setOpened] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      let ranad = sessionStorage.getItem("ranad");
-      if (ranad == null) {
-        setTimeout(() => {
-          setOpened(true);
-          sessionStorage.setItem("ranad", true);
-        }, 1500);
-      }
-    };
-  });
+function Ad(props) {
+  const { isAdOpen, setIsAdOpen } = props;
 
   return (
     <Modal
       centered
-      opened={opened}
-      onClose={() => setOpened(false)}
-      withCloseButton={false}
+      opened={isAdOpen}
+      onClose={() => setIsAdOpen(false)}
       transitionDuration={600}
-      overlayOpacity={0.35}
-      overlayBlur={2}>
+      overlayOpacity={0.5}>
       <h3>Advertizement</h3>
     </Modal>
   );
