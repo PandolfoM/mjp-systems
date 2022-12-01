@@ -10,11 +10,11 @@ function Ad() {
       if (ranad == null) {
         setTimeout(() => {
           setOpened(true);
+          sessionStorage.setItem("ranad", true);
         }, 1500);
       }
-      sessionStorage.setItem("ranad", true);
     };
-  }, []);
+  });
 
   return (
     <Modal
