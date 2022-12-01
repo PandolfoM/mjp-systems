@@ -11,8 +11,10 @@ function Home() {
   useEffect(() => {
     let ranad = sessionStorage.getItem("ranad");
     if (ranad == null) {
-      setIsAdOpen(true);
-      sessionStorage.setItem("ranad", true);
+      setTimeout(() => {
+        setIsAdOpen(true);
+        sessionStorage.setItem("ranad", true);
+      }, 1500);
     }
   }, []);
 
