@@ -47,9 +47,9 @@ body {
 }
 
 .nav-container {
-  background-color: transparent;
+  background-color: white;
   position: fixed;
-  height: 100px;
+  height: 80px;
   width: 100%;
   transition: all 500ms ease;
 }
@@ -124,7 +124,8 @@ body {
 
 // Hero
 .hero-container {
-  height: 100vh;
+  padding-top: 80px;
+  height: 60vh;
 
   .hero-img {
     min-height: 300px;
@@ -148,12 +149,13 @@ body {
   .hero-content {
     width: 45%;
     height: fit-content;
-    border-radius: $radius;
     padding: 1rem;
-    outline: 1px solid #d6d6d6c2;
+    border: 1px solid #d6d6d6c2;
+    border-radius: $radius;
     background: rgb(165, 17, 75);
     background: linear-gradient(280deg, #d6d6d6c3 0%, #b4b4b460 100%);
     margin-right: 5%;
+    overflow: hidden;
 
     h1 {
       margin: 0;
