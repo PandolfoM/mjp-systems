@@ -8,6 +8,7 @@ $primary-color: rgb(26, 43, 109);
 * {
   font-family: $font-stack;
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 html {
@@ -198,7 +199,7 @@ body {
   margin: 5rem auto;
   padding: 2rem;
   height: fit-content;
-  width: 60%;
+  width: 100%;
   background-color: $primary-color;
   background-image: linear-gradient(
       to right,
@@ -216,10 +217,16 @@ body {
     margin-top: 0;
     font-size: 2rem;
     color: whitesmoke;
+    @media screen and (max-width: $breakpoint-small) {
+      font-size: 1.3rem;
+    }
   }
 
   .services-grid {
+    margin: auto;
+    width: 60%;
     @media screen and (max-width: $breakpoint-small) {
+      width: 100%;
       text-align: center;
     }
 

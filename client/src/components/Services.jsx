@@ -16,16 +16,14 @@ function Services() {
   return (
     <div className="services-container">
       <h2>
-        Managed Services provides multiple functions for your business, such as:
+        Managed Services provides <br /> multiple functions for your business,
+        such as:
       </h2>
       <SimpleGrid
         className="services-grid"
         cols={4}
         spacing={"xl"}
-        breakpoints={[
-          { maxWidth: 980, cols: 2, spacing: "md" },
-          { maxWidth: 755, cols: 2, spacing: "sm" },
-        ]}>
+        breakpoints={[{ maxWidth: 980, cols: 2, spacing: "md" }]}>
         <div>
           <FontAwesomeIcon icon={faCloudArrowUp} size="3x" />
           <p>Data Backup</p>
