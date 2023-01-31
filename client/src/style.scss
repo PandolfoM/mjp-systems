@@ -125,18 +125,18 @@ body {
 // Hero
 .hero-container {
   padding-top: 80px;
-  height: 60vh;
+  height: 70vh;
 
   .hero-img {
     min-height: 300px;
     background-image: linear-gradient(
-        to bottom,
-        rgba(245, 246, 252, 0.52),
-        rgba(0, 0, 0, 0.73)
+        to right,
+        $primary-color,
+        rgba(26, 43, 109, 0.8)
       ),
       url("./assets/hero.jpg");
     background-attachment: fixed;
-    background-position: center;
+    background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -153,44 +153,100 @@ body {
     border: 1px solid #d6d6d6c2;
     border-radius: $radius;
     background: rgb(165, 17, 75);
-    background: linear-gradient(280deg, #d6d6d6c3 0%, #b4b4b460 100%);
+    background: #b4b4b460;
     margin-right: 5%;
+    margin-left: 5%;
     overflow: hidden;
+
+    @media screen and (max-width: $breakpoint-small) {
+      width: 100%;
+    }
 
     h1 {
       margin: 0;
-      color: $primary-color;
+      color: white;
+
+      @media screen and (max-width: $breakpoint-small) {
+        width: 100%;
+        font-size: 1.5rem;
+      }
     }
 
     hr {
       width: 20%;
       margin-left: 0;
       border: none;
-      background: $primary-color;
+      background: white;
       height: 2px;
       margin-bottom: 2rem;
+      @media screen and (max-width: $breakpoint-small) {
+        width: 40%;
+      }
     }
 
     p {
       margin: 0;
       font-weight: 400;
-      font-size: 14px;
+      font-size: 16px;
+      color: white;
+      font-weight: 500;
     }
   }
 }
 
-// Our Services
-.service-container {
+.services-container {
+  margin: 5rem auto;
+  padding: 2rem;
+  height: fit-content;
+  width: 60%;
+  background-color: $primary-color;
+  background-image: linear-gradient(
+      to right,
+      $primary-color,
+      rgba(26, 43, 109, 0.8)
+    ),
+    url("./assets/services.jpg");
+  background-position: 250px center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media screen and (max-width: $breakpoint-small) {
+    width: auto;
+  }
+  h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: whitesmoke;
+  }
+
+  .services-grid {
+    @media screen and (max-width: $breakpoint-small) {
+      text-align: center;
+    }
+
+    svg {
+      color: white;
+    }
+
+    p {
+      color: white;
+      font-weight: 500;
+    }
+  }
+}
+
+// Benefits of Managed Services
+.benefits-container {
   margin: 5rem 1.5rem $footer-height 1.5rem;
   padding-bottom: 5rem;
   height: fit-content;
   background-color: white;
   h2 {
-    font-size: 3rem;
+    font-size: 2rem;
+
     color: $primary-color;
   }
 
-  .service-grid {
+  .benefits-grid {
     div {
       padding: 1rem;
       border-radius: $radius;

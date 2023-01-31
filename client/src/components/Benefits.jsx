@@ -1,14 +1,14 @@
 import { SimpleGrid } from "@mantine/core";
 import React from "react";
 
-function Service() {
+function Benefits() {
   return (
     <>
-      <div id="services" className="service-container">
+      <div id="benefits" className="benefits-container">
         <h2>Benefits of Managed Services</h2>
         <SimpleGrid
-          className="service-grid"
-          cols={2}
+          className="benefits-grid"
+          cols={4}
           spacing={"xl"}
           breakpoints={[
             { maxWidth: 980, cols: 2, spacing: "md" },
@@ -67,4 +67,4 @@ function Service() {
   );
 }
 
-export default Service;
+export default Benefits;

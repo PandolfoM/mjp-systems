@@ -1,4 +1,4 @@
-import { Burger, Drawer, useMantineTheme } from "@mantine/core";
+import { Burger, Drawer } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import React, { useState } from "react";
 import { HashLink as Link } from "react-router-hash-link";
@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 function Nav(props) {
   const navigate = useNavigate();
   const { setIsClientModalOpen } = props;
-  const theme = useMantineTheme();
   const [burgerOpen, setBurgerOpen] = useState(false);
   const [scroll, scrollTo] = useWindowScroll();
 
@@ -27,8 +26,8 @@ function Nav(props) {
             </Link>
           </li>
           <li>
-            <Link smooth to={"/#services"}>
-              Our Services
+            <Link smooth to={"/#benefits"}>
+              Services
             </Link>
           </li>
           <li>
@@ -76,8 +75,8 @@ function Nav(props) {
               </Link>
             </li>
             <li>
-              <Link smooth to={"/#services"}>
-                Our Services
+              <Link smooth to={"/#benefits"}>
+                Services
               </Link>
             </li>
             <li>
