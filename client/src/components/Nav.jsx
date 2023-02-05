@@ -26,18 +26,13 @@ function Nav(props) {
             </Link>
           </li>
           <li>
-            <Link smooth to={"/#benefits"}>
+            <Link smooth to={"/#services"}>
               Services
             </Link>
           </li>
           <li>
             <Link smooth to={"/#contact"}>
               Contact Us
-            </Link>
-          </li>
-          <li>
-            <Link smooth to={"/form"}>
-              Form
             </Link>
           </li>
           <li>
@@ -75,18 +70,13 @@ function Nav(props) {
               </Link>
             </li>
             <li>
-              <Link smooth to={"/#benefits"}>
+              <Link smooth to={"/#services"}>
                 Services
               </Link>
             </li>
             <li>
               <Link smooth to={"/#contact"}>
                 Contact Us
-              </Link>
-            </li>
-            <li>
-              <Link smooth to={"/form"}>
-                Form
               </Link>
             </li>
             <li>

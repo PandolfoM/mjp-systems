@@ -129,11 +129,11 @@ export default function Contact() {
             </div>
             <div className="footer-contact">
               <p>
-                Cell: <a href="tel:8609449761">860-944-9761</a>
+                Cell: <a href="tel:8609449761">860-257-8369</a>
               </p>
               <p>
                 Email:{" "}
-                <a href="mailto:markp@mjpsystems.com">markp@mjpsystems.com</a>
+                <a href="mailto:markp@mjpsystems.com">info@mjpsystems.com</a>
               </p>
             </div>
           </div>

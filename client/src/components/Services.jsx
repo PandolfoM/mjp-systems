@@ -14,7 +14,7 @@ import React from "react";
 
 function Services() {
   return (
-    <div className="services-container">
+    <div id="services" className="services-container">
       <h2>
         Managed Services provides <br /> multiple functions for your business,
         such as:

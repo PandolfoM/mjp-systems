@@ -4,7 +4,7 @@ import React from "react";
 function Benefits() {
   return (
     <>
-      <div id="benefits" className="benefits-container">
+      <div className="benefits-container">
         <h2>Benefits of Managed Services</h2>
         <SimpleGrid
           className="benefits-grid"
@@ -18,7 +18,7 @@ function Benefits() {
           <div>
             <h3>Predictable Cost</h3>
             <p>
-              Our Managed Services is an affordable monthly fee per devices,
+              Our Managed Services is an affordable monthly fee per device,
               there are no contracts or term limits. Simply increase or decrease
               your services as needed. This eliminates the burden of managing
               multiple yearly subscriptions that most likely have staggered
