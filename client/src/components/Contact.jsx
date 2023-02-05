@@ -129,7 +129,7 @@ export default function Contact() {
             </div>
             <div className="footer-contact">
               <p>
-                Cell: <a href="tel:8609449761">860-257-8369</a>
+                Tel: <a href="tel:8609449761">860-257-8369</a>
               </p>
               <p>
                 Email:{" "}
