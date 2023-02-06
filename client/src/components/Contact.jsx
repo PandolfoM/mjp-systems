@@ -1,12 +1,9 @@
 import React from "react";
 import { useForm } from "@mantine/form";
-import {
-  NumberInput,
-  Textarea,
-  TextInput,
-  UnstyledButton,
-} from "@mantine/core";
+import { Textarea, TextInput, UnstyledButton } from "@mantine/core";
 import { useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "../../firebase";
 
 export default function Contact() {
   const [status, setStatus] = useState("Send");
@@ -32,44 +29,29 @@ export default function Contact() {
   });
 
   const handleSubmit = async (val) => {
-    // console.log(val);
     setStatus("Sending...");
 
-    let details;
-
-    if (!val.phone) {
-      details = {
-        name: val.name,
-        email: val.email,
-        subject: val.subject,
-        msg: val.msg,
-      };
-    } else {
-      details = {
-        name: val.name,
-        email: val.email,
-        subject: val.subject,
-        phone: val.phone,
-        msg: val.msg,
-      };
-    }
-
-    const response = await fetch("/contactform", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    const sent = await response.json();
-    console.log(sent);
-    if (sent === "error") {
-      setStatus("Error!");
-    } else {
+    try {
+      await addDoc(collection(db, "mail"), {
+        to: import.meta.env.VITE_MAILLIST,
+        message: {
+          subject: val.subject,
+          html: `
+            <p>Name: ${val.name}</p>
+            <p>Email: ${val.email}</p>
+            <p>Message: ${val.msg}</p>
+            <p>Phone: ${val.phone ? val.phone : "n/a"}</p>
+          `,
+        },
+      });
       setTimeout(() => {
         setStatus("Send");
       }, 5000);
       setStatus("Sent!");
+      form.setValues({ name: "", email: "", msg: "", phone: "", subject: "" });
+      form.clearErrors;
+    } catch (e) {
+      console.log(e);
     }
   };
 
