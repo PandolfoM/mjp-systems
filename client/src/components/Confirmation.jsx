@@ -9,7 +9,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box } from "@mantine/core";
+import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
+import { db } from "../../firebase";
 
 function Confirmation(props) {
   const { formData, page, setPage, site } = props;
@@ -30,41 +32,46 @@ function Confirmation(props) {
     e.preventDefault();
     setStatus("Sending...");
 
-    let details;
-
-    if (formData.allSites === "0") {
-      details = {
-        name: formData.name,
-        network: formData.network,
-        email: formData.email,
-        username: formData.username,
-        password: formData.password,
-        form: formData.type === "1" ? "Change Password" : "New Account",
-      };
-    } else {
-      details = {
-        name: formData.name,
-        network: formData.network,
-        email: formData.email,
-        username: formData.username,
-        password: formData.password,
-        form: formData.type === "1" ? "Change Password" : "New Account",
-        sites: formData.allSites === "1" ? "All Sites" : filtered.join(", "),
-      };
-    }
-
-    const response = await fetch("/resetform", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    const sent = await response.json();
-    if (sent === "error") {
-      setStatus("Error!");
-    } else {
+    try {
+      if (formData.allSites === "0") {
+        await addDoc(collection(db, "mail"), {
+          to: import.meta.env.VITE_MAILLIST,
+          message: {
+            subject: formData.type === "1" ? "Change Password" : "New Account",
+            html: `
+            <p>Name: ${formData.name}</p>
+            <p>Network: ${formData.network}</p>
+            <p>Email: ${formData.email}</p>
+            <p>Username: ${formData.username}</p>
+            <p>Password: ${formData.password}</p>
+            `,
+          },
+        });
+      } else {
+        await addDoc(collection(db, "mail"), {
+          to: import.meta.env.VITE_MAILLIST,
+          message: {
+            subject: formData.type === "1" ? "Change Password" : "New Account",
+            html: `
+              <p>Name: ${formData.name}</p>
+              <p>Network: ${formData.network}</p>
+              <p>Email: ${formData.email}</p>
+              <p>Username: ${formData.username}</p>
+              <p>Password: ${formData.password}</p>
+              <p>Sites: ${
+                formData.allSites === "1" ? "All Sites" : filtered.join(", ")
+              }</p>
+              `,
+          },
+        });
+      }
+      setTimeout(() => {
+        setStatus("Send");
+      }, 5000);
+      setStatus("Sent!");
       setPage(page + 1);
+    } catch (e) {
+      setStatus("Error!");
     }
   };
 

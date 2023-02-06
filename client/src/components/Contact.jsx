@@ -51,7 +51,7 @@ export default function Contact() {
       form.setValues({ name: "", email: "", msg: "", phone: "", subject: "" });
       form.clearErrors;
     } catch (e) {
-      console.log(e);
+      setStatus("Error!");
     }
   };
 
